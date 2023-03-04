@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 function Details() {
     const dispatch = useDispatch();
-    const movies = useSelector((store) => store.movies);
+    const details = useSelector((store) => store.details);
 
-
+    console.log('MOVIE DETAILS', details);
 
     return (
-        <></>
+        <h2>DETAILS</h2>
     );
 }
 
