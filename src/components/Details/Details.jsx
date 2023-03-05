@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 function Details() {
     const dispatch = useDispatch();
-    const detailsArr = useSelector(store => store.details.data);
+    const detailsArr = useSelector(store => store.details);
 
     console.log('MOVIE DETAILS', detailsArr);
 
@@ -23,7 +23,6 @@ function Details() {
                 })}
             </section>
         </div>
-
     );
 }
 

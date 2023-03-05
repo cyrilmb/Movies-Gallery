@@ -17,7 +17,10 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   const query = `
-  SELECT * FROM movies
+  SELECT "movies".title, "movies".poster, "movies".description, STRING_AGG("genres".name, ', ') FROM "movies" 
+  JOIN "movies_genres" ON "movies_genres".movie_id = "movies".id
+  JOIN "genres" ON "movies_genres".genre_id = "genres".id
+  GROUP BY "movies".title, "movies".poster, "movies".description
   WHERE "movies".id = $1
   ;`;
   const params = [req.params.id];
