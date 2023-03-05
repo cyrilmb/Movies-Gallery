@@ -32,7 +32,6 @@ function* getDetails(action) {
   //get movie deatils by id
   try {
     const details = yield axios.get(`/api/movie/${action.payload}`);
-    console.log(details);
     yield put({ type: 'SET_DETAILS', payload: details });
   } catch (error) {
     console.log('get details error:', error);

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 function Details() {
     const dispatch = useDispatch();
-    const detailsArr = useSelector(store => store.details);
+    const detailsArr = useSelector(store => store.details.data);
 
     console.log('MOVIE DETAILS', detailsArr);
 
@@ -17,7 +17,11 @@ function Details() {
                         <div key={i}>
                             <h3>{detail.title}</h3>
                             <img src={detail.poster} alt="" />
+                            <h3>Description</h3>
                             <p>{detail.description}</p>
+                            <h3>Genres</h3>
+                            <p>{detail.genres}</p>
+                            <button onClick={() => mainMenu()}>Main Menu</button>
                         </div>
                     );
                 })}

@@ -17,11 +17,11 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   const query = `
-  SELECT "movies".title, "movies".poster, "movies".description, STRING_AGG("genres".name, ', ') FROM "movies" 
+  SELECT "movies".title, "movies".poster, "movies".description, STRING_AGG("genres".name, ', ') AS genres FROM "movies" 
   JOIN "movies_genres" ON "movies_genres".movie_id = "movies".id
   JOIN "genres" ON "movies_genres".genre_id = "genres".id
-  GROUP BY "movies".title, "movies".poster, "movies".description
   WHERE "movies".id = $1
+  GROUP BY "movies".title, "movies".poster, "movies".description
   ;`;
   const params = [req.params.id];
   pool
