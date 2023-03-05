@@ -5,7 +5,7 @@ function Details() {
     const dispatch = useDispatch();
     const detailsArr = useSelector(store => store.details.data);
 
-    // console.log('MOVIE DETAILS', details.data);
+    console.log('MOVIE DETAILS', detailsArr);
 
 
     return (
@@ -15,7 +15,9 @@ function Details() {
                 {detailsArr?.map((detail, i) => {
                     return (
                         <div key={i}>
+                            <h3>{detail.title}</h3>
                             <img src={detail.poster} alt="" />
+                            <p>{detail.description}</p>
                         </div>
                     );
                 })}
