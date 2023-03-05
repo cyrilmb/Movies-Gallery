@@ -3,12 +3,25 @@ import { useDispatch, useSelector } from "react-redux";
 
 function Details() {
     const dispatch = useDispatch();
-    const details = useSelector((store) => store.details);
+    const detailsArr = useSelector(store => store.details.data);
 
-    console.log('MOVIE DETAILS', details);
+    // console.log('MOVIE DETAILS', details.data);
+
 
     return (
-        <h2>DETAILS</h2>
+        <div>
+            <h2>DETAILS</h2>
+            <section className='details'>
+                {detailsArr?.map((detail, i) => {
+                    return (
+                        <div key={i}>
+                            <img src={detail.poster} alt="" />
+                        </div>
+                    );
+                })}
+            </section>
+        </div>
+
     );
 }
 
