@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
     });
 });
 
+//route for detials page
 router.get('/:id', (req, res) => {
   const query = `
   SELECT "movies".title, "movies".poster, "movies".description, STRING_AGG("genres".name, ', ') AS genres FROM "movies" 

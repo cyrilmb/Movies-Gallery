@@ -1,8 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom';
+import './Details.css';
 
 function Details() {
-    const dispatch = useDispatch();
+    //getting array of movie info from store
     const detailsArr = useSelector(store => store.details.data);
     const history = useHistory();
 
@@ -10,12 +11,12 @@ function Details() {
 
 
     return (
-        <div>
-            <h2>DETAILS</h2>
-            <section className='details'>
+        <div >
+            <h2>MOVIE DETAILS</h2>
+            <div className='details-container'>
                 {detailsArr?.map((detail, i) => {
                     return (
-                        <div key={i}>
+                        <div className='card' key={i}>
                             <h3>{detail.title}</h3>
                             <img src={detail.poster} alt="" />
                             <h3>Description</h3>
@@ -26,7 +27,7 @@ function Details() {
                         </div>
                     );
                 })}
-            </section>
+            </div>
         </div>
     );
 }

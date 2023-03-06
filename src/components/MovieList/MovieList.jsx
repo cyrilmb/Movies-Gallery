@@ -10,11 +10,12 @@ function MovieList() {
     const movies = useSelector(store => store.movies);
     const history = useHistory();
 
-
+    //dispatches list of movies on render
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
+    //handles movie poster image onClick to route user to details page
     const getDetails = (id) => {
         dispatch({
             type: 'GET_DETAILS',
