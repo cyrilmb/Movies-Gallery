@@ -1,4 +1,34 @@
-.movies {
+
+.movie-list {
     display : flex;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie-container {
+    padding: 1%;
+    border: outset 4px rgb(14, 48, 45); 
+    border-radius: 10px;
+    margin: 1%;
+}
+
+.movie-container:hover {
+    box-shadow: 5px 8px 16px 5px rgba(0,0,0,0.2);
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.movie-container:hover .title-container {
+    background-color: rgb(144, 35, 35);
+}
+
+.title-container {
+    background-color: rgba(144, 35, 35, 0.715);
+    padding: 3%;
+    border-radius: 10px;
+}
+
+.title-container:hover {
+    background-color: rgb(144, 35, 35);
+
 }
