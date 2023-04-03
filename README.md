@@ -6,8 +6,8 @@ Our weekend challenge was to create a full stack application with a list of movi
 
 ## Screen Shots
 
-![Screen shot of movie sagas project](./public/images/screenShot1.png)
-![Screen shot of movie sagas project](./public/images/screenShot2.png)
+![Screen shot of movie sagas project](./public/screenShots/screenShot1.png)
+![Screen shot of movie sagas project](./public/screenShots/screenShot2.png)
 
 ## Install
 
